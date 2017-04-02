@@ -32,6 +32,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import LogicaNegocio.Usuarios;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -149,8 +151,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
 
         // Reset errors.
-        mEmailView.setError("Este campo es requerido");
-        mPasswordView.setError("Este campo es requerido");
+        mEmailView.setError(null);
+        mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();

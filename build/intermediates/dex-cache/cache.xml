@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\c2dd8866ee05409667caa6582f4f04abdfb25130\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_309f095eb468213799c1423f6052c6b9e2a8ede9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\0611a94a1260cd1d9840fe4226fc84abe63e4c4e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_a127f55ec81432a60743d8de670f1822067eb4b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\64aff7a8ccd898490d3d7ed8220bc7f4bf29fd17\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_6ed97b7641e03cbc4fb177d5439b2ac3d7fad4aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\75d456a70a10a04c7a9461781567d071fd973ca1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_9988233145f5d0f4cf353e94108d8debab350b8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\34a677088ddb35d1b3b066ef89bb17000fc2f4f6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_23aa0229a753a5d5183a4a591ffd1ecd1319db96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\938d186d2d362b3cd8d86dd54018cfc995222bac\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_daa7fcfc734f3a9962df8999bcf2acf889955c33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\e829c704d51a153f524b42e529f11d1d43dd1505\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_7aa4632205ad59fa966256eb3a408616fb420012.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\bb87e8a29c1b983998bbc7633a39345e14c7c2b4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_abc7e15848f70b4fd9b667471668d8c39fbd11eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\cb2138d40130c7417392d4dcb22e5f6d0758df7c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_04feb13090036584bf66b1326e867c20315dd975.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\3c9e9d4c0c18dbf8e1b09956197917a0be2113af\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_6117e76638ff618581e233ce497d0c47ecfa4194.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_3692b2e35696cf25f771b7d56dd90d1b14b6ac59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\589980e7e517f5207535e612beca26a300465193\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_de8c4e6b3d976259cd9b5c084f33f6f13d2a7a0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\byron\.android\build-cache\d3a5aebd567ed9b63ef200d6f910122a668a7d9f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\byron\Documents\GitHub\SGA\app\build\intermediates\pre-dexed\debug\classes_6401258683d00f232b5b26645a15944fbc6e8e84.jar" />
+    </item>
+
+</items>
