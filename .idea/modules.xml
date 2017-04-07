@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BackEnd/BackEnd.iml" filepath="$PROJECT_DIR$/BackEnd/BackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SGA.iml" filepath="$PROJECT_DIR$/SGA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/async-http/async-http.iml" filepath="$PROJECT_DIR$/async-http/async-http.iml" />
     </modules>
   </component>
 </project>

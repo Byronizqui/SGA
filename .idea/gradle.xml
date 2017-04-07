@@ -9,8 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/BackEnd" />
-            <option value="$PROJECT_DIR$/Servlet" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/async-http" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
