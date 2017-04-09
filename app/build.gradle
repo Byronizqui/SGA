@@ -41,4 +41,6 @@ dependencies {
     compile 'org.json:json:20160810'
     compile files('libs/apache-httpcomponents-httpcore.jar')
     compile files('libs/apache-httpcomponents-httpclient.jar')
+    compile files('libs/gson-2.8.0.jar')
+    compile files('libs/RTAdapter.jar')
 }

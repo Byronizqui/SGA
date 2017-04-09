@@ -13,6 +13,8 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+
+import org.apache.http.HttpEntity;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.HttpResponse;
@@ -38,16 +40,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import LogicaNegocio.Jsonable;
 import LogicaNegocio.Usuarios;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -207,7 +217,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return true;
     }
 
     private boolean isPasswordValid(String password) {
@@ -320,6 +330,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mPassword = password;
         }
 
+        RuntimeTypeAdapterFactory<Jsonable> rta = RuntimeTypeAdapterFactory.of(Jsonable.class, "_class")
+                .registerSubtype(Usuarios.class, "Usuarios");
+        Gson gson = new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
+
         @Override
         protected Boolean doInBackground(Void... param) {
             // TODO: attempt authentication against a network service.
@@ -328,16 +342,32 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
                 nameValuePairs.add(new BasicNameValuePair("data",
                         "login"));
+                nameValuePairs.add(new BasicNameValuePair("usuario",
+                        mUser));
+                nameValuePairs.add(new BasicNameValuePair("contrasena",
+                        mPassword));
                 client.getParams().setParameter(CoreProtocolPNames.USER_AGENT,System.getProperty("http.agent"));
                 String paramsString = URLEncodedUtils.format(nameValuePairs, "UTF-8");
                 HttpGet httpGet = new HttpGet(url_login + "?" + paramsString);
                 HttpResponse response = client.execute(httpGet);
+                HttpEntity entity = response.getEntity();
+                String result = null;
+                if (entity != null) {
+
+                    // A Simple JSON Response Read
+                    InputStream instream = entity.getContent();
+                    result = convertStreamToString(instream);
+                    // now you have the string representation of the HTML request
+                    System.out.println("RESPONSE: " + result);
+                    instream.close();
+                }
+                JSONObject myObject = new JSONObject(result);
+                JsonParser parser = new JsonParser();
+                JsonElement mJson =  parser.parse(myObject.toString());
+                Usuarios s = gson.fromJson(mJson, Usuarios.class);
                 BufferedReader rd = new BufferedReader(new InputStreamReader(
                         response.getEntity().getContent()));
-                String line = "";
-                while ((line = rd.readLine()) != null) {
-                    System.out.println(line);
-                }
+
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -360,6 +390,28 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             // TODO: register the new account here.
             return true;
+        }
+
+        private String convertStreamToString(InputStream is) {
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            StringBuilder sb = new StringBuilder();
+
+            String line = null;
+            try {
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line + "\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return sb.toString();
         }
 
         @Override

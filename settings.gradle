@@ -1,1 +1,1 @@
-include ':app', ':BackEnd', ':async-http'
+include ':app', ':async-http', ':BackEnd'
