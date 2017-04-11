@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_ciclos"
+            android:title="Ciclos" />
+        <item
+            android:id="@+id/nav_carreras"
+            android:title="Carreras" />
+        <item
+            android:id="@+id/nav_cursos"
+            android:title="Cursos" />
+        <item
+            android:id="@+id/nav_oferta"
+            android:title="Oferta Académica" />
+        <item
+            android:id="@+id/nav_profesores"
+            android:title="Profesores" />
+        <item
+            android:id="@+id/nav_alumnos"
+            android:title="Alumnos" />
+        <item
+            android:id="@+id/nav_seguridad"
+            android:title="Seguridad" />
+    </group>
+
+
+
+</menu>

@@ -31,16 +31,17 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.loopj.android:android-async-http:1.4.9'
-    testCompile 'junit:junit:4.12'
     compile project(':BackEnd')
     compile project(':async-http')
-    compile files('libs/json-20160810.jar')
-    compile 'org.json:json:20160810'
     compile files('libs/apache-httpcomponents-httpcore.jar')
     compile files('libs/apache-httpcomponents-httpclient.jar')
     compile files('libs/gson-2.8.0.jar')
     compile files('libs/RTAdapter.jar')
+    compile files('libs/json-20160212.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'org.json:json:20160212'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    testCompile 'junit:junit:4.12'
 }

@@ -3,6 +3,8 @@ package com.example.byron.sga;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -21,14 +23,16 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,11 +46,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
+
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 
 import java.io.BufferedReader;
@@ -55,9 +55,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import LogicaNegocio.Jsonable;
+import LogicaNegocio.Rol;
 import LogicaNegocio.Usuarios;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -116,7 +118,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                Toast.makeText(getApplicationContext(), "Login OK", Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -209,8 +211,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            //showProgress(true);
-            mAuthTask = new UserLoginTask(user, password);
+            showProgress(true);
+            mAuthTask = new UserLoginTask(user, password, getApplicationContext());
             mAuthTask.execute((Void) null);
         }
     }
@@ -323,15 +325,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         private final String mUser;
         private final String mPassword;
+        private final Context context;
         private String url_login = "http://192.168.0.13:8084/loginServlet";
         JSONObject json;
-        UserLoginTask(String user, String password) {
+        UserLoginTask(String user, String password, final Context context) {
             mUser = user;
             mPassword = password;
+            this.context = context;
         }
 
         RuntimeTypeAdapterFactory<Jsonable> rta = RuntimeTypeAdapterFactory.of(Jsonable.class, "_class")
-                .registerSubtype(Usuarios.class, "Usuarios");
+                .registerSubtype(Usuarios.class, "Usuarios")
+                .registerSubtype(Rol.class, "Rol");
         Gson gson = new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
 
         @Override
@@ -351,23 +356,46 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 HttpGet httpGet = new HttpGet(url_login + "?" + paramsString);
                 HttpResponse response = client.execute(httpGet);
                 HttpEntity entity = response.getEntity();
-                String result = null;
-                if (entity != null) {
+                String result= null;
+                try {
+                    if (entity != null) {
+                        InputStream instream = entity.getContent();
+                        result = convertStreamToString(instream).toString();
+                        // now you have the string representation of the HTML request
 
-                    // A Simple JSON Response Read
-                    InputStream instream = entity.getContent();
-                    result = convertStreamToString(instream);
-                    // now you have the string representation of the HTML request
-                    System.out.println("RESPONSE: " + result);
-                    instream.close();
+                        if (!("-1\n".equals(result))){
+                            org.json.JSONArray arr = new org.json.JSONArray(result);
+
+                            String[] strs = new String[arr.length()];
+                            for (int i = 0; i < arr.length(); i++) {
+                                strs[i] = arr.getString(i);
+                            }
+                            if (arr.length() <= 0) {
+                                instream.close();
+                                //Toast.makeText(LoginActivity.this, "Login incorrecto", Toast.LENGTH_LONG);
+
+                            }else {
+                                JSONObject myObject1 = new JSONObject(strs[0]);
+                                Usuarios s = gson.fromJson(myObject1.toString(), Usuarios.class);
+                                JSONObject myObject2 = new JSONObject(strs[1]);
+                                Rol r = gson.fromJson(myObject2.toString(), Rol.class);
+                                session.createUserLoginSession(s.getNombre(), s.getCedula(), Integer.toString(r.getRol()));
+                                startActivity(new Intent(context,menuActivity.class));
+                            }
+                        } else {
+
+                            startActivity(new Intent(context,LoginActivity.class));
+
+                        }
+
+                    } else {
+
+                        startActivity(new Intent(context,LoginActivity.class));
+
+                    }
+                } catch (JSONException e){
+                    System.out.println(e);
                 }
-                JSONObject myObject = new JSONObject(result);
-                JsonParser parser = new JsonParser();
-                JsonElement mJson =  parser.parse(myObject.toString());
-                Usuarios s = gson.fromJson(mJson, Usuarios.class);
-                BufferedReader rd = new BufferedReader(new InputStreamReader(
-                        response.getEntity().getContent()));
-
 
             } catch (IOException e) {
                 e.printStackTrace();
