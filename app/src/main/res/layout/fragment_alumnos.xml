@@ -1,0 +1,121 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.byron.sga.Alumnos">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/b_historialAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:elevation="0dp"
+            android:text="consultar historial"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toLeftOf="@+id/b_carreraAlumno"
+            app:layout_constraintRight_toRightOf="@+id/b_carreraAlumno"
+            app:layout_constraintTop_toBottomOf="@+id/b_carreraAlumno"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/b_editarAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="editar alumno"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toRightOf="@+id/b_carreraAlumno"
+            app:layout_constraintTop_toTopOf="@+id/b_carreraAlumno"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/b_matricularAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="-53dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="matricular alumno"
+            android:textSize="8sp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="@+id/b_cedulaAlumno"
+            app:layout_constraintRight_toRightOf="@+id/b_cedulaAlumno"
+            app:layout_constraintTop_toBottomOf="@+id/b_cedulaAlumno"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/b_carreraAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="busqueda por carrera"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/b_cedulaAlumno"
+            app:layout_constraintLeft_toRightOf="@+id/b_cedulaAlumno"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/b_nombreAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Busqueda por nombre"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/b_cedulaAlumno"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/b_agregarAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="agregar alumno"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/b_matricularAlumno"
+            app:layout_constraintLeft_toLeftOf="@+id/b_nombreAlumno"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/b_cedulaAlumno"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:elevation="0dp"
+            android:text="busqueda por cedula"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toRightOf="@+id/b_nombreAlumno"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

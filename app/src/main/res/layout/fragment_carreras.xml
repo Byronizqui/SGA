@@ -1,0 +1,73 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.byron.sga.Carreras">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="1dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:elevation="0dp"
+            android:text="Editar una carrera"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+            app:layout_constraintLeft_toRightOf="@+id/button4"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="6dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Busqueda por nombre"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Agregar una carrera"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toRightOf="@+id/button5"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="1dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Busqueda por codigo"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+            app:layout_constraintLeft_toRightOf="@+id/button3"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

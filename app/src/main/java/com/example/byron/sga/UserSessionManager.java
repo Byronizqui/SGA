@@ -4,13 +4,14 @@ package com.example.byron.sga;
  * Created by Byron on 6/4/2017.
  */
 
+    import java.io.Serializable;
     import java.util.HashMap;
 
     import android.content.Context;
     import android.content.Intent;
     import android.content.SharedPreferences;
     import android.content.SharedPreferences.Editor;
-public class UserSessionManager {
+public class UserSessionManager implements Serializable{
         // Shared Preferences reference
         SharedPreferences pref;
 
@@ -38,6 +39,7 @@ public class UserSessionManager {
         public static final String KEY_TYPE = "type";
 
         // Constructor
+        @SuppressWarnings("serial")
         public UserSessionManager(Context context){
             this._context = context;
             pref = _context.getSharedPreferences(PREFER_NAME, PRIVATE_MODE);

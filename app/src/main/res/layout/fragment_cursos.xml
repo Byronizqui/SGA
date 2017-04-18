@@ -1,0 +1,158 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.byron.sga.Cursos">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button28"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="22dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Editar un curso"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button30"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintRight_creator="1" />
+
+        <Button
+            android:id="@+id/button29"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="0dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Busqueda por carrera"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button32"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/button31"
+            app:layout_constraintRight_toRightOf="@+id/button31"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1" />
+
+        <Button
+            android:id="@+id/button30"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Agregar un curso"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toRightOf="@+id/button32"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/button31"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="11dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Busqueda por codigo"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button29"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/button32"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Busqueda por nombre"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button30"
+            app:layout_constraintLeft_toRightOf="@+id/button29"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button31"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.0">
+
+            <TableRow
+                android:id="@+id/r_"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <EditText
+                    android:id="@+id/t_codigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Código" />
+
+                <EditText
+                    android:id="@+id/t_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Nombre" />
+
+                <EditText
+                    android:id="@+id/t_creditos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Creditos" />
+
+                <EditText
+                    android:id="@+id/t_horas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Horas" />
+            </TableRow>
+        </TableLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

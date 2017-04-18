@@ -1,0 +1,118 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.byron.sga.Ciclos">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/b_anyoCiclo"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="116dp"
+            android:layout_marginStart="7dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Búsqueda por año"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/b_nuevoCiclo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/b_nuevoCiclo"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="13dp"
+            android:layout_marginStart="83dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Ingresar un nuevo ciclo"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/t_anyoCiclo"
+            app:layout_constraintLeft_toLeftOf="@+id/b_anyoCiclo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <TableLayout
+            android:id="@+id/t_anyoCiclo"
+            android:layout_width="wrap_content"
+            android:layout_height="405dp"
+            android:shrinkColumns="*"
+            android:visibility="invisible"
+            tools:layout_constraintTop_creator="1"
+            android:layout_marginTop="110dp"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:id="@+id/r_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <EditText
+                    android:id="@+id/t_codigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Código" />
+
+                <EditText
+                    android:id="@+id/t_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Nombre" />
+
+                <EditText
+                    android:id="@+id/t_creditos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Creditos" />
+
+                <EditText
+                    android:id="@+id/t_horas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none"
+                    android:text="Horas" />
+            </TableRow>
+        </TableLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

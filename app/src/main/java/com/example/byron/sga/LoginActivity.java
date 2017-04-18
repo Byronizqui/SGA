@@ -326,7 +326,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final String mUser;
         private final String mPassword;
         private final Context context;
-        private String url_login = "http://192.168.0.13:8084/loginServlet";
+        private String url_login = "http://10.251.33.70:8084/loginServlet";
         JSONObject json;
         UserLoginTask(String user, String password, final Context context) {
             mUser = user;
@@ -380,7 +380,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 JSONObject myObject2 = new JSONObject(strs[1]);
                                 Rol r = gson.fromJson(myObject2.toString(), Rol.class);
                                 session.createUserLoginSession(s.getNombre(), s.getCedula(), Integer.toString(r.getRol()));
-                                startActivity(new Intent(context,menuActivity.class));
+                                Intent i = new Intent(context,menuActivity.class);
+                                i.putExtra("user", s.getNombre());
+                                i.putExtra("pass", s.getCedula());
+                                i.putExtra("rol", Integer.toString(r.getRol()));
+                                startActivity(i);
                             }
                         } else {
 
@@ -460,6 +464,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+
+
+    }
+    @Override
+    public void onBackPressed() {
     }
 }
 
